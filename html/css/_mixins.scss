@@ -1,0 +1,24 @@
+@mixin sticky-footer($height: 150px){
+	html, body, .page__wrap{
+		height: 100%;
+	}
+
+	.page__wrap{
+		height: auto;
+		min-height: 100%;
+
+		&:after {
+			content: "";
+			height: $height;
+		}
+	}
+
+	.page__footer{
+		position: relative;
+		height: $height;
+		margin-top: -$height;
+		clear: both;
+		overflow: hidden;
+		*zoom: 1;
+	}
+}
